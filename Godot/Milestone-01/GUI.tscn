@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pick-Ups/Pickaxe.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/m5x7.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -20,22 +25,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 151.789
-margin_top = 1.05946
-margin_right = 197.789
-margin_bottom = 9.05946
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -46.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+margin_right = 8.0
+margin_bottom = 22.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control"]
-margin_left = 163.708
-margin_top = -2.11893
-margin_right = 209.708
-margin_bottom = 11.8811
-text = "Testing"
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+margin_left = 12.0
+margin_right = 12.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,8 +1,7 @@
 extends Node2D
 
-var lives = 5
-var Pickaxe = 0
-var target_number_of_coins = 10
+var lives = 3
+onready var Pickaxe = 0
 
 func _ready():
 	add_to_group("Gamestate")
