@@ -14,6 +14,10 @@ func Pickaxe_up():
 	Pickaxe += 1
 	print(Pickaxe)
 	update_GUI()
+
+func Pickaxe_down():
+	Pickaxe -= 1
+	update_GUI()
 	
 func end_game():
 	get_tree().change_scene("res://GameOver.tscn")

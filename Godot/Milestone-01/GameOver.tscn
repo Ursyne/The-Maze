@@ -32,7 +32,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button2" type="Button" parent="Control/TextureRect"]
+margin_left = 120.136
+margin_top = 139.157
+margin_right = 203.136
+margin_bottom = 159.157
+text = "Main Menu"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
 [connection signal="pressed" from="Control/TextureRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Button2" to="." method="_on_Button2_pressed"]

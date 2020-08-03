@@ -29,12 +29,12 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.83873, 6.33761 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 0.872559, 8.82591 )
+extents = Vector2( 4.83873, 6.98563 )
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 0.872559, 8.82591 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8.37035, 0.703445 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -50,7 +50,7 @@ __meta__ = {
 position = Vector2( -0.681877, -0.850719 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -63,7 +63,7 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea_Vertical"]
 position = Vector2( -0.677269, 0.187771 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="AttackArea_Horizontal" type="Area2D" parent="." groups=[
@@ -72,6 +72,6 @@ disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea_Horizontal"]
 position = Vector2( -0.815356, 0.252132 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 disabled = true
 [connection signal="animation_finished" from="Character" to="." method="_on_Character_animation_finished"]

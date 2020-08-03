@@ -81,27 +81,76 @@ shape = SubResource( 5 )
 [node name="Pickaxe" parent="." instance=ExtResource( 3 )]
 position = Vector2( 153.464, 135.641 )
 
-[node name="Destructible_Wall" type="Area2D" parent="."]
+[node name="Pickaxe2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 152.762, 87.7961 )
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Pattern1" type="Node2D" parent="Walls"]
+
+[node name="Destructible_Wall" type="Area2D" parent="Walls/Pattern1"]
 script = ExtResource( 8 )
 
-[node name="Wall" type="Sprite" parent="Destructible_Wall"]
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall"]
 position = Vector2( 121.024, 120.013 )
 texture = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Destructible_Wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall"]
 position = Vector2( 120.955, 120.168 )
 shape = SubResource( 6 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Destructible_Wall"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall"]
 position = Vector2( 118.748, 117.645 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Destructible_Wall/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall/StaticBody2D"]
 position = Vector2( 2.20735, 2.52269 )
 shape = SubResource( 6 )
+
+[node name="Destructible_Wall2" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 16, 0 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall2"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall2"]
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall2"]
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall2/StaticBody2D"]
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall3" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 32, 0 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall3"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall3"]
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall3"]
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall3/StaticBody2D"]
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Pattern2" type="Node2D" parent="Walls"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 script = ExtResource( 11 )
 [connection signal="body_entered" from="Map/SpeedUp" to="Map/SpeedUp" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Camera2D/Area2D" to="Camera2D" method="_on_Area2D_body_entered"]
-[connection signal="area_entered" from="Destructible_Wall" to="Destructible_Wall" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall" to="Walls/Pattern1/Destructible_Wall" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall2" to="Walls/Pattern1/Destructible_Wall2" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall3" to="Walls/Pattern1/Destructible_Wall3" method="_on_Destructible_Wall_area_entered"]
