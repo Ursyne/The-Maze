@@ -1,10 +1,10 @@
 extends Camera2D
-var motion  = Vector2(0,0)
-var speed = 1
+var speed = .25
 
-# Called when the node enters the scene tree for the first time.
 func _physics_process(delta):
-	
 	position.y += speed
+	
 
-	pass
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("Player"):
+		get_tree().call_group("Gamestate", "end_game")
