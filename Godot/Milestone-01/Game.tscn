@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://SpeedUp.gd" type="Script" id=7]
 [ext_resource path="res://Destructible_Wall.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Walls/Wall.png" type="Texture" id=9]
+[ext_resource path="res://MusicPlayer.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 112.317, 3.15546 )
@@ -97,6 +98,10 @@ position = Vector2( 118.748, 117.645 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Destructible_Wall/StaticBody2D"]
 position = Vector2( 2.20735, 2.52269 )
 shape = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+script = ExtResource( 11 )
 [connection signal="body_entered" from="Map/SpeedUp" to="Map/SpeedUp" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Camera2D/Area2D" to="Camera2D" method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Destructible_Wall" to="Destructible_Wall" method="_on_Destructible_Wall_area_entered"]

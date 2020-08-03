@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dota_2_8_bit_-4203095043774465228.ogg-d07b6f9438d4df99eabec87223fecc40.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Dead/dota_2_8_bit_-4203095043774465228.ogg"
+dest_files=[ "res://.import/dota_2_8_bit_-4203095043774465228.ogg-d07b6f9438d4df99eabec87223fecc40.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

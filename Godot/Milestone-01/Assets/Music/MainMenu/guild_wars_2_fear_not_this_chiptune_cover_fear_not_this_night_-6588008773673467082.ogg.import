@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/guild_wars_2_fear_not_this_chiptune_cover_fear_not_this_night_-6588008773673467082.ogg-a1a45a01cc261fc6f03ac60dcc69b3cf.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/MainMenu/guild_wars_2_fear_not_this_chiptune_cover_fear_not_this_night_-6588008773673467082.ogg"
+dest_files=[ "res://.import/guild_wars_2_fear_not_this_chiptune_cover_fear_not_this_night_-6588008773673467082.ogg-a1a45a01cc261fc6f03ac60dcc69b3cf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
