@@ -1,23 +1,29 @@
 extends Node2D
 
 var lives = 3
-onready var Pickaxe = 0
+var coins = 0
+var pickaxes = 0
 
 func _ready():
 	add_to_group("Gamestate")
 	update_GUI()
 	
 func update_GUI():
-	get_tree().call_group("GUI", "update_gui", Pickaxe)
+	get_tree().call_group("GUI", "update_gui_pickaxes", pickaxes)
+	get_tree().call_group("GUI", "update_gui_coins", coins)
 	
 func Pickaxe_up():
-	Pickaxe += 1
-	print(Pickaxe)
+	pickaxes += 1
 	update_GUI()
 
 func Pickaxe_down():
-	Pickaxe -= 1
+	pickaxes -= 1
 	update_GUI()
+	
+func Coin_up():
+	coins += 1
+	update_GUI()
+	
 	
 func end_game():
 	get_tree().change_scene("res://GameOver.tscn")

@@ -41,7 +41,7 @@ func _physics_process(delta):
 	move_and_slide(motion)
 	
 func Pickaxe():
-	if Input.is_action_just_pressed("ui_accept") && get_parent().Pickaxe > 0:
+	if Input.is_action_just_pressed("ui_accept") && get_parent().pickaxes > 0:
 		$Character.play("attack")
 		if Facing_Direction == "Horizontal":
 			$AttackArea_Horizontal/CollisionShape2D.disabled = false

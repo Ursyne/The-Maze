@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
@@ -9,10 +9,11 @@
 [ext_resource path="res://SpeedUp.gd" type="Script" id=7]
 [ext_resource path="res://Destructible_Wall.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Walls/Wall.png" type="Texture" id=9]
+[ext_resource path="res://Coins.tscn" type="PackedScene" id=10]
 [ext_resource path="res://MusicPlayer.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 112.317, 3.15546 )
+extents = Vector2( 137.538, 3.15546 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 159.508, 4.55274 )
@@ -41,10 +42,51 @@ position = Vector2( -7.65146, -2836.02 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/SpeedUp"]
+position = Vector2( 9.11224, 268.847 )
+shape = SubResource( 1 )
+
+[node name="SpeedUp2" type="Area2D" parent="Map"]
+position = Vector2( -7.0611, -2449.28 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/SpeedUp2"]
+position = Vector2( 9.11224, 268.847 )
+shape = SubResource( 1 )
+
+[node name="SpeedUp3" type="Area2D" parent="Map"]
+position = Vector2( -9.47427, -2051.37 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/SpeedUp3"]
+position = Vector2( 9.11224, 268.847 )
+shape = SubResource( 1 )
+
+[node name="SpeedUp4" type="Area2D" parent="Map"]
+position = Vector2( -11.6044, -1652.16 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/SpeedUp4"]
+position = Vector2( 9.11224, 268.847 )
+shape = SubResource( 1 )
+
+[node name="SpeedUp5" type="Area2D" parent="Map"]
+position = Vector2( -4.05374, -710.099 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/SpeedUp5"]
+position = Vector2( 9.11224, 268.847 )
+shape = SubResource( 1 )
+
+[node name="SpeedUp6" type="Area2D" parent="Map"]
+position = Vector2( -9.6514, -1108.51 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/SpeedUp6"]
+position = Vector2( 9.11224, 268.847 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 151.637, 67.9165 )
+position = Vector2( 153.735, 103.763 )
 scale = Vector2( 1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -78,15 +120,10 @@ shape = SubResource( 5 )
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
 
-[node name="Pickaxe" parent="." instance=ExtResource( 3 )]
-position = Vector2( 153.464, 135.641 )
-
-[node name="Pickaxe2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 152.762, 87.7961 )
-
 [node name="Walls" type="Node" parent="."]
 
 [node name="Pattern1" type="Node2D" parent="Walls"]
+position = Vector2( -0.0216904, 0 )
 
 [node name="Destructible_Wall" type="Area2D" parent="Walls/Pattern1"]
 script = ExtResource( 8 )
@@ -96,13 +133,16 @@ position = Vector2( 121.024, 120.013 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall"]
+visible = false
 position = Vector2( 120.955, 120.168 )
 shape = SubResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall"]
+visible = false
 position = Vector2( 118.748, 117.645 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall/StaticBody2D"]
+visible = false
 position = Vector2( 2.20735, 2.52269 )
 shape = SubResource( 6 )
 
@@ -115,13 +155,16 @@ position = Vector2( 121.024, 120.013 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall2"]
+visible = false
 position = Vector2( 120.955, 120.168 )
 shape = SubResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall2"]
+visible = false
 position = Vector2( 118.748, 117.645 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall2/StaticBody2D"]
+visible = false
 position = Vector2( 2.20735, 2.52269 )
 shape = SubResource( 6 )
 
@@ -134,13 +177,1820 @@ position = Vector2( 121.024, 120.013 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall3"]
+visible = false
 position = Vector2( 120.955, 120.168 )
 shape = SubResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall3"]
+visible = false
 position = Vector2( 118.748, 117.645 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall3/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall75" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 79.9954, 240.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall75"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall75"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall75"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall75/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall76" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 95.9954, 240.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall76"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall76"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall76"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall76/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall77" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 111.995, 240.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall77"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall77"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall77"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall77/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall78" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -80.0124, 256.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall78"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall78"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall78"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall78/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall79" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -64.0124, 256.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall79"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall79"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall79"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall79/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall80" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -48.0124, 256.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall80"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall80"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall80"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall80/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall81" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 31.9797, 224.027 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall81"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall81"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall81"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall81/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall82" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 32.0042, 208.032 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall82"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall82"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall82"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall82/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall83" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 47.9929, 271.987 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall83"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall83"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall83"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall83/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall84" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 0.00752258, 272.017 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall84"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall84"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall84"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall84/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall85" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 48.0047, 287.997 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall85"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall85"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall85"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall85/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall42" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 79.9847, 0 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall42"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall42"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall42"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall42/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall43" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 95.9847, 0 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall43"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall43"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall43"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall43/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall45" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 96.0254, 15.9802 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall45"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall45"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall45"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall45/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall46" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 96.0354, 31.9977 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall46"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall46"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall46"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall46/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall47" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 160.015, 32.0046 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall47"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall47"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall47"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall47/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall48" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 144.007, 31.9767 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall48"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall48"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall48"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall48/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall49" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -80.0128, -0.0193481 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall49"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall49"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall49"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall49/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall50" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -79.9797, -0.0855637 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall50"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall50"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall50"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall50/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall51" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -63.9884, 0.0137634 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall51"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall51"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall51"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall51/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall52" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -63.9884, -16.0109 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall52"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall52"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall52"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall52/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall53" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 127.984, 224 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall53"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall53"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall53"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall53/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall54" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 127.984, 240.013 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall54"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall54"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall54"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall54/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall55" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 144, 239.983 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall55"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall55"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall55"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall55/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall56" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 160.016, 239.983 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall56"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall56"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall56"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall56/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall44" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 111.985, 0 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall44"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall44"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall44"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall44/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall38" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -32.0073, 96.0115 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall38"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall38"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall38"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall38/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall39" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -16.0073, 96.0115 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall39"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall39"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall39"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall39/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall40" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -0.00730133, 96.0115 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall40"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall40"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall40"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall40/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall41" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 15.9891, 96.0854 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall41"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall41"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall41"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall41/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall27" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 128.01, 127.992 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall27"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall27"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall27"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall27/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall28" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 144.01, 127.992 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall28"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall28"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall28"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall28/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall29" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 160.01, 127.992 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall29"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall29"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall29"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall29/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall19" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -80.0355, 128.02 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall19"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall19"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall19"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall19/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall20" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -64.0355, 128.02 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall20"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall20"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall20"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall20/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall21" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -48.0355, 128.02 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall21"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall21"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall21"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall21/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall11" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 0.0205307, 63.9932 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall11"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall11"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall11"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall11/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall12" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 16.0205, 63.9932 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall12"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall12"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall12"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall12/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall13" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 32.0205, 63.9932 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall13"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall13"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall13"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall13/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall14" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 48.0005, 63.9797 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall14"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall14"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall14"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall14/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall15" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 64.0088, 64.0011 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall15"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall15"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall15"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall15/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall16" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 80.0088, 64.0011 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall16"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall16"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall16"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall16/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall17" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 96.0088, 64.0011 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall17"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall17"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall17"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall17/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall18" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 111.989, 63.9876 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall18"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall18"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall18"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall18/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall4" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -48.0175, 31.9956 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall4"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall4"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall4"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall4/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall5" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -32.0175, 31.9956 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall5"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall5"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall5"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall5/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall6" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -16.0175, 31.9956 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall6"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall6"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall6"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall6/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall7" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -47.9426, 48.0101 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall7"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall7"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall7"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall7/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall8" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -48.0149, 64.0216 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall8"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall8"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall8"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall8/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall30" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 32.0744, 95.9907 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall30"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall30"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall30"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall30/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall31" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 32.002, 112.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall31"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall31"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall31"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall31/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall32" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 32.0744, 127.989 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall32"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall32"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall32"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall32/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall33" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 32.002, 144.001 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall33"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall33"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall33"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall33/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall34" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 128.065, 159.993 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall34"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall34"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall34"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall34/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall35" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 127.993, 176.005 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall35"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall35"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall35"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall35/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall36" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 128.065, 191.992 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall36"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall36"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall36"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall36/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall37" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 127.993, 208.003 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall37"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall37"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall37"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall37/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall22" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 80.0068, 95.9905 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall22"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall22"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall22"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall22/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall23" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 96.0068, 95.9905 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall23"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall23"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall23"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall23/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall24" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 112.007, 95.9905 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall24"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall24"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall24"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall24/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall25" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 80.0817, 112.005 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall25"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall25"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall25"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall25/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall26" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 80.0093, 128.017 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall26"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall26"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall26"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall26/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall9" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -47.9303, 95.9855 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall9"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall9"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall9"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall9/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall10" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -48.0027, 111.997 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall10"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall10"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall10"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall10/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall57" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -32.0161, 128.002 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall57"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall57"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall57"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall57/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall58" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 31.9828, 160.001 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall58"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall58"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall58"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall58/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall59" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -0.00110626, 159.991 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall59"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall59"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall59"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall59/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall60" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 0.00899506, 175.987 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall60"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall60"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall60"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall60/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall61" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -15.9714, 176 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall61"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall61"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall61"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall61/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall62" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -32.0054, 175.996 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall62"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall62"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall62"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall62/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall63" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -48.0021, 176 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall63"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall63"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall63"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall63/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall64" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -48.0021, 191.976 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall64"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall64"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall64"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall64/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall65" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -64.0069, 191.988 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall65"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall65"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall65"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall65/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall66" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -80.0019, 191.981 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall66"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall66"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall66"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall66/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall67" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -2.28882e-05, 224.003 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall67"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall67"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall67"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall67/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall68" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( -16.0027, 223.994 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall68"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall68"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall68"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall68/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall69" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 16.0037, 223.994 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall69"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall69"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall69"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall69/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall70" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 63.9895, 175.984 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall70"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall70"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall70"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall70/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall71" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 79.9956, 175.981 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall71"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall71"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall71"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall71/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall72" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 96.0051, 175.984 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall72"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall72"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall72"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall72/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall73" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 80.0138, 192.009 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall73"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall73"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall73"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall73/StaticBody2D"]
+visible = false
+position = Vector2( 2.20735, 2.52269 )
+shape = SubResource( 6 )
+
+[node name="Destructible_Wall74" type="Area2D" parent="Walls/Pattern1"]
+position = Vector2( 79.9988, 207.977 )
+script = ExtResource( 8 )
+
+[node name="Wall" type="Sprite" parent="Walls/Pattern1/Destructible_Wall74"]
+position = Vector2( 121.024, 120.013 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall74"]
+visible = false
+position = Vector2( 120.955, 120.168 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Pattern1/Destructible_Wall74"]
+visible = false
+position = Vector2( 118.748, 117.645 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Pattern1/Destructible_Wall74/StaticBody2D"]
+visible = false
 position = Vector2( 2.20735, 2.52269 )
 shape = SubResource( 6 )
 
@@ -149,8 +1999,106 @@ shape = SubResource( 6 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 script = ExtResource( 11 )
+
+[node name="Coins" parent="." instance=ExtResource( 10 )]
+position = Vector2( 169.061, 135.73 )
+
+[node name="Pickaxes" type="Node" parent="."]
+
+[node name="Pickaxe" parent="Pickaxes" instance=ExtResource( 3 )]
+position = Vector2( 153.464, 135.641 )
+
+[node name="Pickaxe2" parent="Pickaxes" instance=ExtResource( 3 )]
+position = Vector2( 152.762, 87.7961 )
 [connection signal="body_entered" from="Map/SpeedUp" to="Map/SpeedUp" method="_on_SpeedUp_body_entered"]
+[connection signal="body_entered" from="Map/SpeedUp2" to="Map/SpeedUp2" method="_on_SpeedUp_body_entered"]
+[connection signal="body_entered" from="Map/SpeedUp3" to="Map/SpeedUp3" method="_on_SpeedUp_body_entered"]
+[connection signal="body_entered" from="Map/SpeedUp4" to="Map/SpeedUp4" method="_on_SpeedUp_body_entered"]
+[connection signal="body_entered" from="Map/SpeedUp5" to="Map/SpeedUp5" method="_on_SpeedUp_body_entered"]
+[connection signal="body_entered" from="Map/SpeedUp6" to="Map/SpeedUp6" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Camera2D/Area2D" to="Camera2D" method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall" to="Walls/Pattern1/Destructible_Wall" method="_on_Destructible_Wall_area_entered"]
 [connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall2" to="Walls/Pattern1/Destructible_Wall2" method="_on_Destructible_Wall_area_entered"]
 [connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall3" to="Walls/Pattern1/Destructible_Wall3" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall75" to="Walls/Pattern1/Destructible_Wall75" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall76" to="Walls/Pattern1/Destructible_Wall76" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall77" to="Walls/Pattern1/Destructible_Wall77" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall78" to="Walls/Pattern1/Destructible_Wall78" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall79" to="Walls/Pattern1/Destructible_Wall79" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall80" to="Walls/Pattern1/Destructible_Wall80" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall81" to="Walls/Pattern1/Destructible_Wall81" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall82" to="Walls/Pattern1/Destructible_Wall82" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall83" to="Walls/Pattern1/Destructible_Wall83" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall84" to="Walls/Pattern1/Destructible_Wall84" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall85" to="Walls/Pattern1/Destructible_Wall85" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall42" to="Walls/Pattern1/Destructible_Wall42" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall43" to="Walls/Pattern1/Destructible_Wall43" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall45" to="Walls/Pattern1/Destructible_Wall45" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall46" to="Walls/Pattern1/Destructible_Wall46" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall47" to="Walls/Pattern1/Destructible_Wall47" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall48" to="Walls/Pattern1/Destructible_Wall48" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall49" to="Walls/Pattern1/Destructible_Wall49" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall50" to="Walls/Pattern1/Destructible_Wall50" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall51" to="Walls/Pattern1/Destructible_Wall51" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall52" to="Walls/Pattern1/Destructible_Wall52" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall53" to="Walls/Pattern1/Destructible_Wall53" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall54" to="Walls/Pattern1/Destructible_Wall54" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall55" to="Walls/Pattern1/Destructible_Wall55" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall56" to="Walls/Pattern1/Destructible_Wall56" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall44" to="Walls/Pattern1/Destructible_Wall44" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall38" to="Walls/Pattern1/Destructible_Wall38" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall39" to="Walls/Pattern1/Destructible_Wall39" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall40" to="Walls/Pattern1/Destructible_Wall40" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall41" to="Walls/Pattern1/Destructible_Wall41" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall27" to="Walls/Pattern1/Destructible_Wall27" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall28" to="Walls/Pattern1/Destructible_Wall28" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall29" to="Walls/Pattern1/Destructible_Wall29" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall19" to="Walls/Pattern1/Destructible_Wall19" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall20" to="Walls/Pattern1/Destructible_Wall20" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall21" to="Walls/Pattern1/Destructible_Wall21" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall11" to="Walls/Pattern1/Destructible_Wall11" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall12" to="Walls/Pattern1/Destructible_Wall12" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall13" to="Walls/Pattern1/Destructible_Wall13" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall14" to="Walls/Pattern1/Destructible_Wall14" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall15" to="Walls/Pattern1/Destructible_Wall15" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall16" to="Walls/Pattern1/Destructible_Wall16" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall17" to="Walls/Pattern1/Destructible_Wall17" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall18" to="Walls/Pattern1/Destructible_Wall18" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall4" to="Walls/Pattern1/Destructible_Wall4" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall5" to="Walls/Pattern1/Destructible_Wall5" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall6" to="Walls/Pattern1/Destructible_Wall6" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall7" to="Walls/Pattern1/Destructible_Wall7" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall8" to="Walls/Pattern1/Destructible_Wall8" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall30" to="Walls/Pattern1/Destructible_Wall30" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall31" to="Walls/Pattern1/Destructible_Wall31" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall32" to="Walls/Pattern1/Destructible_Wall32" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall33" to="Walls/Pattern1/Destructible_Wall33" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall34" to="Walls/Pattern1/Destructible_Wall34" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall35" to="Walls/Pattern1/Destructible_Wall35" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall36" to="Walls/Pattern1/Destructible_Wall36" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall37" to="Walls/Pattern1/Destructible_Wall37" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall22" to="Walls/Pattern1/Destructible_Wall22" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall23" to="Walls/Pattern1/Destructible_Wall23" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall24" to="Walls/Pattern1/Destructible_Wall24" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall25" to="Walls/Pattern1/Destructible_Wall25" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall26" to="Walls/Pattern1/Destructible_Wall26" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall9" to="Walls/Pattern1/Destructible_Wall9" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall10" to="Walls/Pattern1/Destructible_Wall10" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall57" to="Walls/Pattern1/Destructible_Wall57" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall58" to="Walls/Pattern1/Destructible_Wall58" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall59" to="Walls/Pattern1/Destructible_Wall59" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall60" to="Walls/Pattern1/Destructible_Wall60" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall61" to="Walls/Pattern1/Destructible_Wall61" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall62" to="Walls/Pattern1/Destructible_Wall62" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall63" to="Walls/Pattern1/Destructible_Wall63" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall64" to="Walls/Pattern1/Destructible_Wall64" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall65" to="Walls/Pattern1/Destructible_Wall65" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall66" to="Walls/Pattern1/Destructible_Wall66" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall67" to="Walls/Pattern1/Destructible_Wall67" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall68" to="Walls/Pattern1/Destructible_Wall68" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall69" to="Walls/Pattern1/Destructible_Wall69" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall70" to="Walls/Pattern1/Destructible_Wall70" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall71" to="Walls/Pattern1/Destructible_Wall71" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall72" to="Walls/Pattern1/Destructible_Wall72" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall73" to="Walls/Pattern1/Destructible_Wall73" method="_on_Destructible_Wall_area_entered"]
+[connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall74" to="Walls/Pattern1/Destructible_Wall74" method="_on_Destructible_Wall_area_entered"]

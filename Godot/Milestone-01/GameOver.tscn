@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Game-Over/Game-Over.png" type="Texture" id=1]
 [ext_resource path="res://GameOver.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Music/Dead/dota_2_8_bit_-4203095043774465228.ogg" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFontData" id=3]
+antialiased = false
+font_path = "res://Assets/Fonts/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://Assets/Fonts/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -27,17 +41,34 @@ margin_left = 116.465
 margin_top = 110.458
 margin_right = 206.465
 margin_bottom = 130.458
-text = "Retry"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Control/TextureRect/Button"]
+margin_left = 30.7014
+margin_top = 2.66968
+margin_right = 70.7014
+margin_bottom = 16.6697
+custom_fonts/font = SubResource( 4 )
+text = "Retry"
+
 [node name="Button2" type="Button" parent="Control/TextureRect"]
-margin_left = 120.136
-margin_top = 139.157
-margin_right = 203.136
-margin_bottom = 159.157
-text = "Main Menu"
+margin_left = 115.798
+margin_top = 135.486
+margin_right = 205.798
+margin_bottom = 155.486
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/TextureRect/Button2"]
+margin_left = 13.0147
+margin_top = 2.33597
+margin_right = 53.0147
+margin_bottom = 16.336
+custom_fonts/font = SubResource( 2 )
+text = "Quit To Menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

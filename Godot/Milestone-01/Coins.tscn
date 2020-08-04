@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Pick-Ups/coin1.png" type="Texture" id=1]
+[ext_resource path="res://Coins.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Pick-Ups/coin3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Pick-Ups/coin4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Pick-Ups/coin2.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.3628
+
+[node name="Coins" type="Node2D"]
+position = Vector2( 3.10786, 3.09258 )
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+position = Vector2( 0, 0.667419 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_body_entered"]

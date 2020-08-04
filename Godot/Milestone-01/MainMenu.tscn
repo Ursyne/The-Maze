@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Main-Menu/3523663-review_pathway.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Music/MainMenu/guild_wars_2_fear_not_this_chiptune_cover_fear_not_this_night_-6588008773673467082.ogg" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://Assets/Fonts/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,7 +29,17 @@ margin_left = 22.8901
 margin_top = 127.732
 margin_right = 102.225
 margin_bottom = 147.732
-text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Button"]
+margin_left = 12.9772
+margin_top = 2.05076
+margin_right = 82.9772
+margin_bottom = 16.0508
+custom_fonts/font = SubResource( 2 )
+text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
