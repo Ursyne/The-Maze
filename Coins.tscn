@@ -28,6 +28,7 @@ frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+visible = false
 collision_layer = 17
 collision_mask = 17
 

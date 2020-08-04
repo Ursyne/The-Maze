@@ -2,18 +2,20 @@
 
 [ext_resource path="res://GUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Pick-Ups/Pickaxe.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Fonts/m5x7.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Pick-Ups/coin1.png" type="Texture" id=4]
 
-[sub_resource type="DynamicFont" id=1]
-size = 20
-font_data = ExtResource( 3 )
+[sub_resource type="DynamicFontData" id=4]
+antialiased = false
+font_path = "res://Assets/Fonts/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+font_data = SubResource( 4 )
 
 [sub_resource type="DynamicFontData" id=2]
+antialiased = false
 font_path = "res://Assets/Fonts/m5x7.ttf"
 
 [sub_resource type="DynamicFont" id=3]
-size = 20
 font_data = SubResource( 2 )
 
 [node name="GUI" type="CanvasLayer"]
@@ -27,50 +29,48 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Control"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -49.764
-margin_right = 0.236023
-margin_bottom = 17.526
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -28.664
+margin_right = 28.664
+margin_bottom = 15.123
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -46.0
-margin_top = 1.381
-margin_bottom = 18.381
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="pickaxesIcon" type="TextureRect" parent="Control/HBoxContainer"]
-margin_right = 8.0
-margin_bottom = 17.0
+[node name="pickaxesIcon" type="TextureRect" parent="Control/Panel"]
+margin_left = 5.85397
+margin_top = 1.62976
+margin_right = 13.854
+margin_bottom = 18.6298
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="pickaxes" type="Label" parent="Control/HBoxContainer"]
-margin_left = 12.0
-margin_right = 12.0
-margin_bottom = 17.0
-custom_fonts/font = SubResource( 1 )
+[node name="pickaxes" type="Label" parent="Control/Panel"]
+margin_left = 17.854
+margin_top = 1.6
+margin_right = 17.854
+margin_bottom = 18.6
+custom_fonts/font = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="coinsIcon" type="TextureRect" parent="Control/HBoxContainer"]
-margin_left = 16.0
-margin_right = 22.0
-margin_bottom = 17.0
+[node name="coinsIcon" type="TextureRect" parent="Control/Panel"]
+margin_left = 30.0741
+margin_top = 1.71815
+margin_right = 36.0741
+margin_bottom = 18.7182
 texture = ExtResource( 4 )
 
-[node name="coins" type="Label" parent="Control/HBoxContainer"]
-margin_left = 26.0
-margin_right = 26.0
-margin_bottom = 17.0
+[node name="coins" type="Label" parent="Control/Panel"]
+margin_left = 40.279
+margin_top = 1.6
+margin_right = 40.279
+margin_bottom = 3.6
 custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

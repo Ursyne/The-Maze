@@ -2,7 +2,7 @@ extends Node2D
 
 var lives = 3
 var coins = 0
-var pickaxes = 10
+var pickaxes = 0
 
 func _ready():
 	add_to_group("Gamestate")
