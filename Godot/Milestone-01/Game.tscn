@@ -21646,6 +21646,7 @@ position = Vector2( 281.193, 184.442 )
 position = Vector2( 40.6319, 184.347 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
 autoplay = true
 script = ExtResource( 11 )
 [connection signal="body_entered" from="Map/SpeedUp" to="Map/SpeedUp" method="_on_SpeedUp_body_entered"]
