@@ -1,5 +1,5 @@
 extends Camera2D
-var speed = .25
+var speed = .2
 
 func _ready():
 	add_to_group("Camera")
@@ -13,4 +13,4 @@ func _on_Area2D_body_entered(body):
 		get_tree().call_group("Gamestate", "end_game")
 		
 func _speed_up():
-	speed += .15
+	speed += .1

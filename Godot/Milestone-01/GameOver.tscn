@@ -4,19 +4,19 @@
 [ext_resource path="res://GameOver.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Music/Dead/dota_2_8_bit_-4203095043774465228.ogg" type="AudioStream" id=3]
 
-[sub_resource type="DynamicFontData" id=3]
-antialiased = false
-font_path = "res://Assets/Fonts/m5x7.ttf"
-
-[sub_resource type="DynamicFont" id=4]
-font_data = SubResource( 3 )
-
 [sub_resource type="DynamicFontData" id=1]
 antialiased = false
 font_path = "res://Assets/Fonts/m5x7.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+antialiased = false
+font_path = "res://Assets/Fonts/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -50,7 +50,7 @@ margin_left = 30.7014
 margin_top = 2.66968
 margin_right = 70.7014
 margin_bottom = 16.6697
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Retry"
 
 [node name="Button2" type="Button" parent="Control/TextureRect"]
@@ -67,7 +67,7 @@ margin_left = 13.0147
 margin_top = 2.33597
 margin_right = 53.0147
 margin_bottom = 16.336
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Quit To Menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

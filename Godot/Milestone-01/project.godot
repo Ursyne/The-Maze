@@ -37,6 +37,7 @@ window/stretch/aspect="keep"
 2d_physics/layer_3="Pickaxe"
 2d_render/layer_4="SpeedUp"
 2d_physics/layer_4="SpeedUp"
+2d_physics/layer_5="Coins"
 
 [rendering]
 
