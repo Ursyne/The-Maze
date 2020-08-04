@@ -11,13 +11,12 @@ onready var tracks = [
   'music_six',
   'music_seven',
   'music_eight',
-  'music_nine',
-  'music_ten'
+  'music_nine'
 ]
 
 func _ready():
 	random.randomize()
-	var rand_nb = random.randi_range(0,9)
+	var rand_nb = random.randi_range(0,8)
 	var audiostream = load('res://Assets/Music/' + tracks[rand_nb] + '.ogg')
 	set_stream(audiostream)
 	play()

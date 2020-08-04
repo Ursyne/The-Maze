@@ -33,10 +33,10 @@ radius = 5.16482
 height = 1.85513
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 0.872559, 8.82591 )
+extents = Vector2( 0.162628, 8.3039 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 8.37035, 0.703445 )
+extents = Vector2( 7.32473, 0.0819702 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 136.726, 86.6945 )
@@ -51,7 +51,7 @@ __meta__ = {
 position = Vector2( -0.681877, -0.850719 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
