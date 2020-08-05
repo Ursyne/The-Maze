@@ -41,13 +41,7 @@ func _physics_process(delta):
 		
 	move_and_slide(motion)
 	
-	if Input.is_action_just_pressed("ui_home") and !paused:
-		get_tree().paused = true
-		paused = true
-	elif paused:
-		get_tree().paused = false
-		paused = false
-		
+
 	
 func Pickaxe():
 	if Input.is_action_just_pressed("ui_accept") && get_parent().pickaxes > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://MusicPlayer.gd" type="Script" id=11]
 [ext_resource path="res://Assets/Sounds/334262__projectsu012__explosive-bang.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Sounds/back_style_2_006.ogg" type="AudioStream" id=13]
+[ext_resource path="res://PausedText.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 137.538, 3.15546 )
@@ -31,6 +32,16 @@ extents = Vector2( 158.898, 7.7516 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 7.43822, 7.23182 )
+
+[sub_resource type="DynamicFontData" id=7]
+antialiased = false
+font_path = "res://Assets/Fonts/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 7 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
@@ -45791,6 +45802,26 @@ stream = ExtResource( 13 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 script = ExtResource( 11 )
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+
+[node name="PausedText" type="Label" parent="PauseMenu"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -27.0
+margin_top = -10.5
+margin_right = 27.0
+margin_bottom = 10.5
+custom_fonts/font = SubResource( 8 )
+text = "Paused"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Map/SpeedUp" to="Map/SpeedUp" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Map/SpeedUp2" to="Map/SpeedUp2" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Map/SpeedUp3" to="Map/SpeedUp3" method="_on_SpeedUp_body_entered"]
