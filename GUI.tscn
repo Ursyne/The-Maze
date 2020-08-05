@@ -31,17 +31,17 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -28.664
-margin_right = 28.664
-margin_bottom = 15.123
+margin_left = -30.5
+margin_right = 30.5
+margin_bottom = 12.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="pickaxesIcon" type="TextureRect" parent="Control/Panel"]
-margin_left = 5.85397
+margin_left = 1.85397
 margin_top = 1.62976
-margin_right = 13.854
+margin_right = 9.854
 margin_bottom = 18.6298
 texture = ExtResource( 2 )
 __meta__ = {
@@ -49,9 +49,9 @@ __meta__ = {
 }
 
 [node name="pickaxes" type="Label" parent="Control/Panel"]
-margin_left = 17.854
+margin_left = 14.854
 margin_top = -1.34454
-margin_right = 17.854
+margin_right = 14.854
 margin_bottom = 15.6555
 custom_fonts/font = SubResource( 2 )
 __meta__ = {
@@ -59,16 +59,19 @@ __meta__ = {
 }
 
 [node name="coinsIcon" type="TextureRect" parent="Control/Panel"]
-margin_left = 30.0741
+margin_left = 31.0741
 margin_top = 1.71815
-margin_right = 36.0741
+margin_right = 37.0741
 margin_bottom = 18.7182
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="coins" type="Label" parent="Control/Panel"]
-margin_left = 40.279
+margin_left = 42.279
 margin_top = -1.34454
-margin_right = 40.279
+margin_right = 42.279
 margin_bottom = 11.6555
 custom_fonts/font = SubResource( 4 )
 __meta__ = {

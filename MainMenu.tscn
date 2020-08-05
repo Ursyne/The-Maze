@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Main-Menu/3523663-review_pathway.png" type="Texture" id=2]
@@ -10,7 +10,20 @@ antialiased = false
 font_path = "res://Assets/Fonts/m5x7.ttf"
 
 [sub_resource type="DynamicFont" id=2]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+antialiased = false
+font_path = "res://Assets/Fonts/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 3 )
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -36,10 +49,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Button"]
-margin_left = 12.9772
-margin_top = 2.05076
-margin_right = 82.9772
-margin_bottom = 16.0508
+margin_left = 8.61184
+margin_top = -10.45
+margin_right = 87.6118
+margin_bottom = 10.55
 custom_fonts/font = SubResource( 2 )
 text = "New Game"
 __meta__ = {
@@ -53,4 +66,15 @@ volume_db = -10.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 21.4299
+margin_top = 2.97638
+margin_right = 176.43
+margin_bottom = 43.9764
+custom_fonts/font = SubResource( 4 )
+text = "The Maze"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
