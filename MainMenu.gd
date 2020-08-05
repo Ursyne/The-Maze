@@ -6,7 +6,6 @@ func _physics_process(delta):
 	if Input.is_action_just_released("ui_accept"):
 		_on_Button_pressed()
 
-
 func _on_Button_pressed():
 	$Button/AudioStreamPlayer2.playing = true
 	yield(get_tree().create_timer(.3),"timeout")

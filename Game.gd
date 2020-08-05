@@ -1,28 +1,27 @@
 extends Node2D
 
-var coins = 0
-var pickaxes = 0
 
 func _ready():
 	add_to_group("Gamestate")
 	update_GUI()
 	
 func update_GUI():
-	get_tree().call_group("GUI", "update_gui_pickaxes", pickaxes)
-	get_tree().call_group("GUI", "update_gui_coins", coins)
+	get_tree().call_group("GUI", "update_gui_pickaxes", Global.pickaxes)
+	get_tree().call_group("GUI", "update_gui_coins", Global.coins)
 	
 func Pickaxe_up():
-	pickaxes += 1
+	Global.pickaxes += 1
 	$Pickaxes/PickaxeSound.play()
 	update_GUI()
 
 func Pickaxe_down():
-	pickaxes -= 1
+	Global.pickaxes -= 1
 	$Walls/Destroy.play()
 	update_GUI()
 	
 func Coin_up():
-	coins += 1
+	Global.coins += 1
+	
 	update_GUI()
 	
 func end_game():

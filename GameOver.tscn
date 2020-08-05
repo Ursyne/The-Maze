@@ -25,7 +25,7 @@ antialiased = false
 font_path = "res://Assets/Fonts/m5x7.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-size = 20
+size = 24
 font_data = SubResource( 5 )
 
 [node name="GameOver" type="CanvasLayer"]
@@ -91,20 +91,21 @@ stream = ExtResource( 4 )
 volume_db = -10.0
 
 [node name="CoinsTotal" type="TextureRect" parent="."]
-margin_left = 145.819
-margin_top = 88.2808
-margin_right = 185.819
-margin_bottom = 128.281
+margin_left = 131.5
+margin_top = 85.25
+margin_right = 148.5
+margin_bottom = 104.25
 texture = ExtResource( 5 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CoinsTotal"]
-margin_left = 9.72169
-margin_top = -1.00056
-margin_right = 49.7217
-margin_bottom = 15.9994
+margin_left = 21.8926
+margin_top = -0.643138
+margin_right = 61.8926
+margin_bottom = 18.3569
 custom_fonts/font = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
