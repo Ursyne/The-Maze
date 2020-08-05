@@ -39,20 +39,20 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 22.8901
-margin_top = 127.732
-margin_right = 102.225
-margin_bottom = 147.732
+margin_left = 27.2555
+margin_top = 126.938
+margin_right = 106.59
+margin_bottom = 146.938
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Button"]
-margin_left = 8.61184
-margin_top = -10.45
-margin_right = 87.6118
-margin_bottom = 10.55
+margin_left = 10.0008
+margin_top = -0.33031
+margin_right = 89.0008
+margin_bottom = 20.6697
 custom_fonts/font = SubResource( 2 )
 text = "New Game"
 __meta__ = {

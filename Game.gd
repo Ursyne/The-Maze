@@ -19,6 +19,9 @@ func Pickaxe_down():
 	$Walls/Destroy.play()
 	update_GUI()
 	
+func Pickaxe_hit():
+	$Walls/Hit.play()
+	
 func Coin_up():
 	Global.coins += 1
 	

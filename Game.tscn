@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://PausedText.gd" type="Script" id=14]
 [ext_resource path="res://Global.gd" type="Script" id=15]
 [ext_resource path="res://SpikeTrap.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Sounds/360874__projectsu012__temp.ogg" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 137.538, 3.15546 )
@@ -123,12 +124,7 @@ shape = SubResource( 1 )
 position = Vector2( 153.867, 87.6077 )
 scale = Vector2( 1, 1 )
 collision_layer = 5
-collision_mask = 2147483653
-
-[node name="Traps" type="Node" parent="."]
-
-[node name="SpikeTrap" parent="Traps" instance=ExtResource( 16 )]
-position = Vector2( 169.061, 150.94 )
+collision_mask = 2147483685
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -137,7 +133,6 @@ script = ExtResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="Camera2D"]
 collision_layer = 2147483648
-collision_mask = 9
 
 [node name="DeathWall" type="CollisionShape2D" parent="Camera2D/Area2D"]
 visible = false
@@ -43470,9 +43465,15 @@ visible = false
 position = Vector2( 2.20735, 2.52269 )
 shape = SubResource( 6 )
 
+[node name="Hit" type="AudioStreamPlayer" parent="Walls"]
+stream = ExtResource( 17 )
+volume_db = -5.0
+pitch_scale = 1.59
+
 [node name="Destroy" type="AudioStreamPlayer" parent="Walls"]
 stream = ExtResource( 12 )
-volume_db = -5.0
+volume_db = -10.0
+pitch_scale = 0.81
 
 [node name="Coins" type="Node" parent="."]
 
@@ -43537,7 +43538,7 @@ position = Vector2( 281.689, 230.883 )
 position = Vector2( 265.146, 231.173 )
 
 [node name="Coins15" parent="Coins" instance=ExtResource( 10 )]
-position = Vector2( 41.0273, 326.828 )
+position = Vector2( 41.0799, 327.564 )
 
 [node name="Coins16" parent="Coins" instance=ExtResource( 10 )]
 position = Vector2( 41.0273, 343.106 )
@@ -43847,6 +43848,27 @@ position = Vector2( 41.1234, 1623.08 )
 
 [node name="Coins118" parent="Coins" instance=ExtResource( 10 )]
 position = Vector2( 57.1234, 1623.08 )
+
+[node name="Coins697" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 104.634, 3926.78 )
+
+[node name="Coins698" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 121.134, 3927.03 )
+
+[node name="Coins699" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 153.196, 3927.15 )
+
+[node name="Coins700" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 104.821, 3943.34 )
+
+[node name="Coins701" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 121.384, 3943.47 )
+
+[node name="Coins702" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 40.5354, 3975.01 )
+
+[node name="Coins703" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 40.3587, 3991.67 )
 
 [node name="Coins120" parent="Coins" instance=ExtResource( 10 )]
 position = Vector2( 105.204, 1655 )
@@ -45808,6 +45830,164 @@ position = Vector2( 248.913, 5928.96 )
 
 [node name="PickaxeSound" type="AudioStreamPlayer" parent="Pickaxes"]
 stream = ExtResource( 13 )
+
+[node name="Traps" type="Node" parent="."]
+
+[node name="SpikeTrap" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 169, 600.013 )
+
+[node name="SpikeTrap52" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 184.98, 136.038 )
+
+[node name="SpikeTrap2" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 121.039, 728.001 )
+
+[node name="SpikeTrap3" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 169.046, 775.98 )
+
+[node name="SpikeTrap4" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 249.03, 1048.01 )
+
+[node name="SpikeTrap5" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 136.998, 1064.05 )
+
+[node name="SpikeTrap6" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 136.998, 1256.03 )
+
+[node name="SpikeTrap7" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 152.986, 1447.99 )
+
+[node name="SpikeTrap8" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 137.002, 1448.01 )
+
+[node name="SpikeTrap9" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 264.991, 1847.99 )
+
+[node name="SpikeTrap10" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 280.996, 1847.98 )
+
+[node name="SpikeTrap11" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 201.007, 1976.03 )
+
+[node name="SpikeTrap12" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 201.001, 1991.97 )
+
+[node name="SpikeTrap13" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 200.981, 2008 )
+
+[node name="SpikeTrap14" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 153.017, 2152.01 )
+
+[node name="SpikeTrap15" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 201.022, 2296 )
+
+[node name="SpikeTrap16" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 265.01, 2296 )
+
+[node name="SpikeTrap17" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 105.005, 2488 )
+
+[node name="SpikeTrap18" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 232.999, 2552.01 )
+
+[node name="SpikeTrap19" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 121.012, 2679.96 )
+
+[node name="SpikeTrap20" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 120.997, 2840 )
+
+[node name="SpikeTrap21" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 104.999, 2951.98 )
+
+[node name="SpikeTrap22" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 153.003, 3160.01 )
+
+[node name="SpikeTrap23" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 217.009, 3416 )
+
+[node name="SpikeTrap24" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 105.008, 3608.03 )
+
+[node name="SpikeTrap25" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 120.988, 3911.99 )
+
+[node name="SpikeTrap26" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 106.02, 3911.98 )
+
+[node name="SpikeTrap27" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 121.001, 4072.03 )
+
+[node name="SpikeTrap28" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 169.027, 4184.01 )
+
+[node name="SpikeTrap29" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 185.027, 4184.02 )
+
+[node name="SpikeTrap30" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 200.989, 4344.02 )
+
+[node name="SpikeTrap31" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 104.989, 4407.98 )
+
+[node name="SpikeTrap32" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 200.976, 4503.99 )
+
+[node name="SpikeTrap33" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 216.979, 4504 )
+
+[node name="SpikeTrap34" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 121.018, 4584 )
+
+[node name="SpikeTrap35" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 281.004, 4696 )
+
+[node name="SpikeTrap36" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 248.964, 4776 )
+
+[node name="SpikeTrap37" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 248.993, 4792 )
+
+[node name="SpikeTrap38" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 73.0013, 4968.01 )
+
+[node name="SpikeTrap39" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 120.998, 5080.01 )
+
+[node name="SpikeTrap40" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 169.002, 5208 )
+
+[node name="SpikeTrap41" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 200.994, 5255.97 )
+
+[node name="SpikeTrap42" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 89.016, 5352 )
+
+[node name="SpikeTrap43" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 105.034, 5352 )
+
+[node name="SpikeTrap44" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 200.994, 5480.01 )
+
+[node name="SpikeTrap45" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 217.009, 5480.01 )
+
+[node name="SpikeTrap46" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 120.99, 5640.01 )
+
+[node name="SpikeTrap47" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 105, 5735.99 )
+
+[node name="SpikeTrap48" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 89.0102, 5960 )
+
+[node name="SpikeTrap49" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 104.983, 5960 )
+
+[node name="SpikeTrap50" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 232.953, 5864.03 )
+
+[node name="SpikeTrap51" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 248.926, 5864.03 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true

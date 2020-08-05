@@ -5,7 +5,7 @@ func _ready():
 	$AnimatedSprite.play("Idle")
 	$Damage/CollisionShape2D.disabled = true
 	$BlockMovement/CollisionShape2D.disabled = true
-	yield(get_tree().create_timer(3),"timeout")
+	yield(get_tree().create_timer(2.5),"timeout")
 	
 	$AnimatedSprite.play("SpikeMove")
 	$Damage/CollisionShape2D.disabled = false
@@ -15,7 +15,7 @@ func _ready():
 	$AnimatedSprite.play("SpikeOut")
 	$Damage/CollisionShape2D.disabled = true
 	$BlockMovement/CollisionShape2D.disabled = false
-	yield(get_tree().create_timer(2),"timeout")
+	yield(get_tree().create_timer(1),"timeout")
 	_ready()
 
 
