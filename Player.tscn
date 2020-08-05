@@ -17,15 +17,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "attack",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -41,7 +41,8 @@ extents = Vector2( 7.32473, 0.0819702 )
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 136.726, 86.6945 )
 scale = Vector2( 1.84772, 2.22152 )
-collision_mask = 2147483649
+collision_layer = 33
+collision_mask = 2147483681
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -51,7 +52,7 @@ __meta__ = {
 position = Vector2( -0.681877, -0.850719 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Sounds/back_style_2_006.ogg" type="AudioStream" id=13]
 [ext_resource path="res://PausedText.gd" type="Script" id=14]
 [ext_resource path="res://Global.gd" type="Script" id=15]
+[ext_resource path="res://SpikeTrap.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 137.538, 3.15546 )
@@ -123,6 +124,11 @@ position = Vector2( 153.867, 87.6077 )
 scale = Vector2( 1, 1 )
 collision_layer = 5
 collision_mask = 2147483653
+
+[node name="Traps" type="Node" parent="."]
+
+[node name="SpikeTrap" parent="Traps" instance=ExtResource( 16 )]
+position = Vector2( 169.061, 150.94 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

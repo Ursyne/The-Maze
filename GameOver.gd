@@ -16,10 +16,14 @@ func _physics_process(delta):
 
 func _on_Button_pressed():
 	$AudioStreamPlayer2.playing = true
+	Global.coins = 0
+	Global.pickaxes = 0
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://Game.tscn")
 
 func _on_Button2_pressed():
 	$AudioStreamPlayer2.playing = true
+	Global.coins = 0
+	Global.pickaxes = 0
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://MainMenu.tscn")
