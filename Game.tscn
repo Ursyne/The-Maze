@@ -120,12 +120,6 @@ script = ExtResource( 7 )
 position = Vector2( 9.11224, 268.847 )
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 153.867, 87.6077 )
-scale = Vector2( 1, 1 )
-collision_layer = 5
-collision_mask = 2147483685
-
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
@@ -46225,6 +46219,15 @@ script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Player" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Player" parent="Player" instance=ExtResource( 5 )]
+position = Vector2( 153.867, 87.6077 )
+scale = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 2147483685
 [connection signal="body_entered" from="Map/SpeedUp" to="Map/SpeedUp" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Map/SpeedUp2" to="Map/SpeedUp2" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Map/SpeedUp3" to="Map/SpeedUp3" method="_on_SpeedUp_body_entered"]
