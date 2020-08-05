@@ -13,7 +13,6 @@ func _on_Button_pressed():
 	yield(get_tree().create_timer(.3),"timeout")
 	get_tree().change_scene("res://Game.tscn")
 
-
 func _on_Button2_pressed():
 	$AudioStreamPlayer2.playing = true
 	yield(get_tree().create_timer(.3),"timeout")

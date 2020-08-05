@@ -17,20 +17,20 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "attack",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 5.16482
-height = 1.85513
+height = 4.06534
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 0.162628, 8.3039 )
@@ -51,11 +51,11 @@ __meta__ = {
 position = Vector2( -0.681877, -0.850719 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.955338, 0.5419 )
+position = Vector2( -0.776154, -0.203271 )
 shape = SubResource( 2 )
 
 [node name="AttackArea_Vertical" type="Area2D" parent="." groups=[

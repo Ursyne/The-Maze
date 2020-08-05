@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Assets/Walls/Wall.png" type="Texture" id=9]
 [ext_resource path="res://Coins.tscn" type="PackedScene" id=10]
 [ext_resource path="res://MusicPlayer.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Sounds/334262__projectsu012__explosive-bang.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Sounds/back_style_2_006.ogg" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 137.538, 3.15546 )
@@ -43447,6 +43449,10 @@ visible = false
 position = Vector2( 2.20735, 2.52269 )
 shape = SubResource( 6 )
 
+[node name="Destroy" type="AudioStreamPlayer" parent="Walls"]
+stream = ExtResource( 12 )
+volume_db = -5.0
+
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coins" parent="Coins" instance=ExtResource( 10 )]
@@ -45778,6 +45784,9 @@ position = Vector2( 280.83, 5880.51 )
 
 [node name="Pickaxe80" parent="Pickaxes" instance=ExtResource( 3 )]
 position = Vector2( 248.913, 5928.96 )
+
+[node name="PickaxeSound" type="AudioStreamPlayer" parent="Pickaxes"]
+stream = ExtResource( 13 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true

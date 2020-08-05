@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/334262__projectsu012__explosive-bang.ogg-8ebea6586fddf12492f141574e741909.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/334262__projectsu012__explosive-bang.ogg"
+dest_files=[ "res://.import/334262__projectsu012__explosive-bang.ogg-8ebea6586fddf12492f141574e741909.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
