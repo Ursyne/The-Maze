@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Milestone-01"
+config/name="The-Maze"
 run/main_scene="res://MainMenu.tscn"
 
 [autoload]
