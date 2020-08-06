@@ -120,6 +120,15 @@ script = ExtResource( 7 )
 position = Vector2( 9.11224, 268.847 )
 shape = SubResource( 1 )
 
+[node name="SpeedUp8" type="Area2D" parent="Map"]
+position = Vector2( -5.85095, 1186.63 )
+collision_layer = 8
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/SpeedUp8"]
+position = Vector2( 9.11224, 268.847 )
+shape = SubResource( 1 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
@@ -46235,6 +46244,7 @@ collision_mask = 2147483685
 [connection signal="body_entered" from="Map/SpeedUp5" to="Map/SpeedUp5" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Map/SpeedUp6" to="Map/SpeedUp6" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Map/SpeedUp7" to="Map/SpeedUp7" method="_on_SpeedUp_body_entered"]
+[connection signal="body_entered" from="Map/SpeedUp8" to="Map/SpeedUp8" method="_on_SpeedUp_body_entered"]
 [connection signal="body_entered" from="Camera2D/Area2D" to="Camera2D" method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall" to="Walls/Pattern1/Destructible_Wall" method="_on_Destructible_Wall_area_entered"]
 [connection signal="area_entered" from="Walls/Pattern1/Destructible_Wall333" to="Walls/Pattern1/Destructible_Wall333" method="_on_Destructible_Wall_area_entered"]
